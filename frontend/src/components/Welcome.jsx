@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Robot from "../assets/robot.gif";
+// import Matrix from "../assets/matrix.gif";
+
 export default function Welcome() {
   const [userName, setUserName] = useState("");
   useEffect(async () => {
@@ -10,27 +12,63 @@ export default function Welcome() {
       ).username
     );
   }, []);
+
   return (
     <Container>
-      <img src={Robot} alt="" />
-      <h1>
-        Welcome, <span>{userName}!</span>
-      </h1>
-      <h3>Please select a chat to Start messaging.</h3>
+      {/* <BackgroundImage src={Matrix} /> */}
+      <Content>
+        <RobotImage src={Robot} alt="" />
+        <Title>
+          <span>{userName}</span>, Welcome to the SIGNALv2!
+        </Title>
+        <Description>Please select a chat to start messaging.</Description>
+      </Content>
     </Container>
   );
 }
 
 const Container = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+const BackgroundImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const Content = styled.div`
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   flex-direction: column;
-  img {
-    height: 20rem;
-  }
+  padding: 2rem;
+  color: #00ff00;
+`;
+
+const RobotImage = styled.img`
+  height: 20rem;
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 0;
   span {
-    color: #4e0eff;
+    color: #fff;
   }
 `;
+
+const Description = styled.h3`
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+`;
+

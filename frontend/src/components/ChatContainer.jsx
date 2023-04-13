@@ -112,30 +112,42 @@ const Container = styled.div`
   grid-template-rows: 10% 80% 10%;
   gap: 0.1rem;
   overflow: hidden;
+  background-color: #1a1a1a;
+  color: #1aff00;
+  font-family: 'Courier New', Courier, monospace;
+  
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     grid-template-rows: 15% 70% 15%;
   }
+  
   .chat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    border-bottom: 1px solid #1aff00;
+    
     .user-details {
       display: flex;
       align-items: center;
       gap: 1rem;
+      
       .avatar {
         img {
           height: 3rem;
         }
       }
+      
       .username {
         h3 {
-          color: white;
+          color: #1aff00;
+          font-weight: bold;
+          font-size: 1.2rem;
         }
       }
     }
   }
+  
   .chat-messages {
     padding: 1rem 2rem;
     display: flex;
@@ -145,37 +157,156 @@ const Container = styled.div`
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
-        background-color: #ffffff39;
+        background-color: #1aff0039;
         width: 0.1rem;
         border-radius: 1rem;
       }
     }
+    
     .message {
       display: flex;
       align-items: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.05rem;
+      margin-bottom: 1rem;
+      
       .content {
         max-width: 40%;
         overflow-wrap: break-word;
         padding: 1rem;
-        font-size: 1.1rem;
         border-radius: 1rem;
-        color: #d1d1d1;
-        @media screen and (min-width: 720px) and (max-width: 1080px) {
-          max-width: 70%;
-        }
+        background-color: #1a1a1a;
+        border: 1px solid #1aff00;
       }
     }
+    
     .sended {
       justify-content: flex-end;
+      
       .content {
-        background-color: #4f04ff21;
+        background-color: #1aff0021;
       }
     }
+    
     .recieved {
       justify-content: flex-start;
+      
       .content {
-        background-color: #9900ff20;
+        background-color: #1aff0021;
+      }
+    }
+  }
+  
+  .chat-input {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 0 2rem;
+    border-top: 1px solid #1aff00;
+    
+    input {
+      flex: 1;
+      background-color: transparent;
+      border: none;
+      color: #1aff00;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      padding: 1rem;
+      
+      &::placeholder {
+        color: #1aff0066;
+      }
+    }
+    
+    button {
+      background-color: #1aff00;
+      border: none;
+      color: #1a1a1a;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 1rem;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        background-color: #00ff00;
+        color: #1a1a1a;
       }
     }
   }
 `;
+
+
+// const Container = styled.div`
+//   display: grid;
+//   grid-template-rows: 10% 80% 10%;
+//   gap: 0.1rem;
+//   overflow: hidden;
+//   @media screen and (min-width: 720px) and (max-width: 1080px) {
+//     grid-template-rows: 15% 70% 15%;
+//   }
+//   .chat-header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 0 2rem;
+//     .user-details {
+//       display: flex;
+//       align-items: center;
+//       gap: 1rem;
+//       .avatar {
+//         img {
+//           height: 3rem;
+//         }
+//       }
+//       .username {
+//         h3 {
+//           color: white;
+//         }
+//       }
+//     }
+//   }
+//   .chat-messages {
+//     padding: 1rem 2rem;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//     overflow: auto;
+//     &::-webkit-scrollbar {
+//       width: 0.2rem;
+//       &-thumb {
+//         background-color: #ffffff39;
+//         width: 0.1rem;
+//         border-radius: 1rem;
+//       }
+//     }
+//     .message {
+//       display: flex;
+//       align-items: center;
+//       .content {
+//         max-width: 40%;
+//         overflow-wrap: break-word;
+//         padding: 1rem;
+//         font-size: 1.1rem;
+//         border-radius: 1rem;
+//         color: #d1d1d1;
+//         @media screen and (min-width: 720px) and (max-width: 1080px) {
+//           max-width: 70%;
+//         }
+//       }
+//     }
+//     .sended {
+//       justify-content: flex-end;
+//       .content {
+//         background-color: #4f04ff21;
+//       }
+//     }
+//     .recieved {
+//       justify-content: flex-start;
+//       .content {
+//         background-color: #9900ff20;
+//       }
+//     }
+//   }
+// `;

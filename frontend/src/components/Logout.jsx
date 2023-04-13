@@ -29,11 +29,34 @@ const Button = styled.button`
   align-items: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #9a86f3;
+  background-color: #000;
   border: none;
   cursor: pointer;
+  &:hover {
+      background-color: red;
+  }
   svg {
     font-size: 1.3rem;
-    color: #ebe7ff;
+    color: #0f0;
+
   }
 `;
+
+
+// const Button = styled.button`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 0.5rem;
+//   border-radius: 0.5rem;
+//   background-color: #15da21;
+//   border: none;
+//   cursor: pointer;
+//   &:hover {
+//       background-color:red;
+//     }
+//   svg {
+//     font-size: 1.3rem;
+//     color: #ebe7ff;
+//   }
+// `;

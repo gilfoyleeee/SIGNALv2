@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { registerRoute } from "../utils/APIRoutes";
@@ -35,7 +35,7 @@ export default function Register() {
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values;
-    if ((username, email, password, confirmPassword) == "") {
+    if ((username, email, password, confirmPassword) === "") {
       toast.error("Input fields cannot be empty !")
     }
     else if (password !== confirmPassword) {
@@ -130,6 +130,7 @@ export default function Register() {
   );
 }
 
+
 const FormContainer = styled.div`
   height: 100vh;
   width: 100vw;
@@ -138,7 +139,10 @@ const FormContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  ${'' /* background-color: #131324; */}
+  background-color: #000;
+  padding: 50px;
+  font-family: "Courier New", Courier, monospace;
+
   .brand {
     display: flex;
     align-items: center;
@@ -148,35 +152,42 @@ const FormContainer = styled.div`
       height: 5rem;
     }
     h1 {
-      color: black;
+      color: #0f0;
       text-transform: uppercase;
     }
   }
 
   form {
     display: flex;
+    width:35%;
     flex-direction: column;
     gap: 2rem;
-    ${'' /* background-color: #00000076; */}
+    background-color: #222;
     border-radius: 2rem;
     padding: 3rem 5rem;
+    padding: 3rem;
+    box-shadow: 0 0 10px #0f0;
   }
+
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #15da21;
+    border: 0.1rem solid #0f0;
     border-radius: 0.4rem;
-    color: white;
+    color: #0f0;
     width: 100%;
     font-size: 1rem;
+    font-family: "Courier New", Courier, monospace;
+
     &:focus {
-      border: 0.1rem solid #997af0;
+      border: 0.1rem solid #0f0;
       outline: none;
     }
   }
+
   button {
-    background-color: #15da21;
-    color: white;
+    background-color: #0f0;
+    color: #000;
     padding: 1rem 2rem;
     border: none;
     font-weight: bold;
@@ -184,20 +195,100 @@ const FormContainer = styled.div`
     border-radius: 0.4rem;
     font-size: 1rem;
     text-transform: uppercase;
+    font-family: "Courier New", Courier, monospace;
+
     &:hover {
-      background-color: black;
+      background-color: white;
     }
   }
+
   span {
-    color: black;
+    color: #0f0;
     text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: "Courier New", Courier, monospace;
+
     a {
-      color: #15da21;
+      color: #0f0;
       text-decoration: none;
       font-weight: bold;
+
       &:hover {
-        color: black;
+        color: white;
       }
     }
   }
 `;
+
+
+// const FormContainer = styled.div`
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   gap: 1rem;
+//   align-items: center;
+//   ${'' /* background-color: #131324; */}
+//   .brand {
+//     display: flex;
+//     align-items: center;
+//     gap: 1rem;
+//     justify-content: center;
+//     img {
+//       height: 5rem;
+//     }
+//     h1 {
+//       color: #15da21;
+//       text-transform: uppercase;
+//     }
+//   }
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+//     ${'' /* background-color: #00000076; */}
+//     border-radius: 2rem;
+//     padding: 3rem 5rem;
+//   }
+//   input {
+//     background-color: transparent;
+//     padding: 1rem;
+//     border: 0.1rem solid #15da21;
+//     border-radius: 0.4rem;
+//     color: black;
+//     width: 100%;
+//     font-size: 1rem;
+//     &:focus {
+//       border: 0.1rem solid black;
+//       outline: none;
+//     }
+//   }
+//   button {
+//     background-color: #15da21;
+//     color: white;
+//     padding: 1rem 2rem;
+//     border: none;
+//     font-weight: bold;
+//     cursor: pointer;
+//     border-radius: 0.4rem;
+//     font-size: 1rem;
+//     text-transform: uppercase;
+//     &:hover {
+//       background-color: black;
+//     }
+//   }
+//   span {
+//     color: black;
+//     text-transform: uppercase;
+//     a {
+//       color: #15da21;
+//       text-decoration: none;
+//       font-weight: bold;
+//       &:hover {
+//         color: black;
+//       }
+//     }
+//   }
+// `;

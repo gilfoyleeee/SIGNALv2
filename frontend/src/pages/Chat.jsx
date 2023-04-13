@@ -69,11 +69,14 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background-color: #0f0f0f;
+  color: #00ff41;
+  font-family: 'Courier New', Courier, monospace;
   .container {
     height: 85vh;
     width: 85vw;
-    background-color: #00000076;
+    background-color: #000;
+    border: 2px solid #00ff41;
     display: grid;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
@@ -81,3 +84,25 @@ const Container = styled.div`
     }
   }
 `;
+
+
+// const Container = styled.div`
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   gap: 1rem;
+//   align-items: center;
+//   background-color: white;
+//   .container {
+//     height: 85vh;
+//     width: 85vw;
+//     background-color: grey;
+//     display: grid;
+//     grid-template-columns: 25% 75%;
+//     @media screen and (min-width: 720px) and (max-width: 1080px) {
+//       grid-template-columns: 35% 65%;
+//     }
+//   }
+// `;
