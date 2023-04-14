@@ -17,7 +17,7 @@ export default function Welcome() {
     <Container>
       {/* <BackgroundImage src={Matrix} /> */}
       <Content>
-        <RobotImage src={Robot} alt="" />
+        <WelcomeTitle src={Robot} alt="" />
         <Title>
           <span>{userName}</span>, Welcome to the SIGNALv2!
         </Title>
@@ -53,12 +53,12 @@ const Content = styled.div`
   color: #00ff00;
 `;
 
-const RobotImage = styled.img`
+const WelcomeTitle = styled.img`
   height: 20rem;
 `;
 
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-align: center;
   margin: 2rem 0;
   span {

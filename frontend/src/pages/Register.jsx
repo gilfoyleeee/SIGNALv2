@@ -11,7 +11,7 @@ export default function Register() {
   const navigate = useNavigate();
   const toastOptions = {
     position: "bottom-right",
-    autoClose: 8000,
+    autoClose: 2500,
     pauseOnHover: true,
     draggable: true,
     theme: "dark",
@@ -36,7 +36,7 @@ export default function Register() {
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values;
     if ((username, email, password, confirmPassword) === "") {
-      toast.error("Input fields cannot be empty !")
+      toast.error("Input fields cannot be empty !", toastOptions)
     }
     else if (password !== confirmPassword) {
       toast.error(
@@ -205,7 +205,7 @@ const FormContainer = styled.div`
   span {
     color: #0f0;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-family: "Courier New", Courier, monospace;
 
     a {

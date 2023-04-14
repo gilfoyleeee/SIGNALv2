@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
+import Logout from "./Logout";
 
 export default function Contacts({ contacts, changeChat }) {
   const [currentUserName, setCurrentUserName] = useState(undefined);
@@ -57,6 +58,9 @@ export default function Contacts({ contacts, changeChat }) {
             </div>
             <div className="username">
               <h2>{currentUserName}</h2>
+            </div>
+            <div>
+            <Logout />
             </div>
           </div>
         </Container>

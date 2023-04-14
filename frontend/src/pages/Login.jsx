@@ -12,7 +12,7 @@ export default function Login() {
   const [values, setValues] = useState({ username: "", password: "" });
   const toastOptions = {
     position: "bottom-right",
-    autoClose: 8000,
+    autoClose: 2500,
     pauseOnHover: true,
     draggable: true,
     theme: "dark",
@@ -30,10 +30,10 @@ export default function Login() {
   const validateForm = () => {
     const { username, password } = values;
     if (username === "") {
-      toast.error("Email and Password is required.", toastOptions);
+      toast.error("Please fill out both fields !", toastOptions);
       return false;
     } else if (password === "") {
-      toast.error("Email and Password is required.", toastOptions);
+      toast.error("Please fill out both fields !", toastOptions);
       return false;
     }
     return true;

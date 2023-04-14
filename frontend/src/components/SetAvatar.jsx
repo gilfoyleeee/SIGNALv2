@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
 
 export default function SetAvatar() {
-  const api = `https://api.multiavatar.com/4659987`;
+  const api = `https://api.multiavatar.com/469793`;
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -47,7 +47,7 @@ export default function SetAvatar() {
           process.env.REACT_APP_LOCALHOST_KEY,
           JSON.stringify(user)
         );
-        navigate("/");
+        navigate("/register");
       } else {
         toast.error("Error setting avatar. Please try again.", toastOptions);
       }
@@ -68,7 +68,7 @@ export default function SetAvatar() {
   }, []);
   return (
     <>
-      {isLoading || avatars.length === 0 ? (
+      {isLoading ? (
         <Container>
           <img src={loader} alt="loader" className="loader" />
         </Container>
@@ -125,8 +125,7 @@ const Container = styled.div`
       font-size: 3rem;
       font-weight: bold;
       text-align: center;
-      text-shadow: 0 0 10px #0AFF16, 0 0 20px #0AFF16, 0 0 30px #0AFF16,
-        0 0 40px #0AFF16, 0 0 50px #0AFF16, 0 0 60px #0AFF16, 0 0 70px #0AFF16;
+      text-shadow: 0 0 10px #0AFF16;
     }
   }
   .avatars {

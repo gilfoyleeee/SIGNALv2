@@ -34,10 +34,14 @@ const Button = styled.button`
   cursor: pointer;
   &:hover {
       background-color: red;
+      
   }
   svg {
     font-size: 1.3rem;
     color: #0f0;
+    &:hover {
+      color:white;
+    }
 
   }
 `;
